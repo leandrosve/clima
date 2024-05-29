@@ -8,6 +8,7 @@ import {
 import { CityDetails } from "../../../model/CityDetails";
 import MapIcon from "../../../icons/MapIcon";
 import { LinkButton } from "../../common/Button";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   city: CityDetails;
@@ -15,6 +16,7 @@ interface Props {
 }
 
 const WeatherCard = ({ city, weatherData }: Props) => {
+  const { t } = useTranslation();
   const date = useMemo(() => {
     return DateTime.now().setLocale("es").setZone(weatherData.timezone);
   }, [weatherData]);
@@ -24,37 +26,40 @@ const WeatherCard = ({ city, weatherData }: Props) => {
   return (
     <div className="bg-base-200 rounded-sm shadow">
       <div className="card-gradient">
-        <div className="px-10 py-3 pb-5 flex flex-col">
+        <div className="px-4 lg:px-10 py-3 pb-5 flex flex-col">
           <div className="flex items-center gap-3 justify-between">
             <div className="flex flex-col ">
-              <div className="text-6xl font-bold flex gap-2 items-start">
-                {weatherData.temperature}{" "}
+              <div className="text-6xl max-xs:text-3xl font-bold flex gap-2 items-start flex-wrap">
+                {weatherData.temperature}
                 <span className="text-lg mt-1">°C</span>
-                <div className="flex flex-col text-sm mt-2 text-content-200 border-l border-content-400/10 pl-4 ml-2">
-                  <div>Humedad: {weatherData.humidity}% </div>
-                  <div>Precipitacion: {weatherData.precipitation}%</div>
+                <div className="flex flex-col text-sm mt-2 text-content-200 border-l border-content-400/10 pl-4  ml-2">
+                  <div>{t("weather.measures.humidity")}: {weatherData.humidity}% </div>
+                  <div>{t("weather.measures.precipitation")}: {weatherData.precipitation}%</div>
                 </div>
               </div>
             </div>
             <img
               src={getWeatherIcon(weatherCode.mood, weatherData.isDay)}
-              alt={weatherCode.description}
-              className="w-[150px] h-[120px]"
+              alt={t("weather.descriptions." + weatherCode.localeKey)}
+              className="w-[150px] h-[120px] max-xs:w-[90px]"
             />
           </div>
-
-          <div className="flex justify-between items-end">
-            <div className="text-content-200">
-              {date.toLocaleString(DateTime.DATE_FULL)}, <span className="font-bold"> {date.toFormat("t")} (UTC {date.toFormat("Z")})</span>
+          <div className="flex justify-between items-end max-md:flex-col-reverse">
+            <div className="text-content-200 flex-wrap">
+              {date.toLocaleString(DateTime.DATE_FULL)},{" "}
+              <span className="font-bold">
+                {" "}
+                <span className="inline-flex">{date.toFormat("t")} (UTC {date.toFormat("Z")})</span>
+              </span>
             </div>
-            <div className="ml-auto font-bold text-lg">
-              {weatherCode.description}
+            <div className="ml-auto font-bold text-lg text-content-200">
+              {t("weather.descriptions." + weatherCode.localeKey)}
             </div>
           </div>
 
           <hr className="my-4 border-content-400/5" />
 
-          <div className="flex justify-between gap-1 items-center">
+          <div className="flex justify-between gap-2 items-center">
             <div className="flex gap-3">
               <img
                 src={`https://hatscripts.github.io/circle-flags/flags/${city.countryCode.toLowerCase()}.svg`}

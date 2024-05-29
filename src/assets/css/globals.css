@@ -66,7 +66,7 @@
   overflow-x: hidden;
 }
 
-.card-gradient {
+:root[data-mode="dark"] .card-gradient {
   background: rgb(255, 255, 255);
   background: linear-gradient(
     18deg,
@@ -74,6 +74,10 @@
     rgba(255, 255, 255, 0) 20%,
     rgba(71, 118, 230, 0.1) 100%
   );
+}
+
+ul {
+  list-style: none;
 }
 @media only screen and (max-width: 768px) {
   :root {

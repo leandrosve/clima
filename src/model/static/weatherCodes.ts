@@ -49,123 +49,121 @@ const getWeatherIcon = (mood: WeatherMoods, isDay?: boolean) => {
 
 // En base a los WMO Weather interpretation codes (WW)
 // https://open-meteo.com/en/docs
-const weatherCodes: Record<
-  number,
-  { mood: WeatherMoods; description: string }
-> = {
-  0: {
-    mood: WeatherMoods.CLEAR,
-    description: "Clear sky",
-  },
-  1: {
-    mood: WeatherMoods.PARTIAL_CLOUD,
-    description: "Mainly clear",
-  },
-  2: {
-    mood: WeatherMoods.PARTIAL_CLOUD,
-    description: "partly cloudy",
-  },
-  3: {
-    mood: WeatherMoods.CLOUD,
-    description: "overcast",
-  },
-  45: {
-    mood: WeatherMoods.FOG,
-    description: "Fog",
-  },
-  48: {
-    mood: WeatherMoods.FOG,
-    description: "Fog",
-  },
-  51: {
-    mood: WeatherMoods.DRIZZLE,
-    description: "Light Drizzle",
-  },
-  53: {
-    mood: WeatherMoods.DRIZZLE,
-    description: "Moderate Drizzle",
-  },
-  55: {
-    mood: WeatherMoods.DRIZZLE,
-    description: "Dense Drizzle",
-  },
-  56: {
-    mood: WeatherMoods.DRIZZLE,
-    description: "Light Freezing Drizzle",
-  },
-  57: {
-    mood: WeatherMoods.DRIZZLE,
-    description: "Dense Freezing Drizzle",
-  },
+const weatherCodes: Record<number, { mood: WeatherMoods; localeKey: string }> =
+  {
+    0: {
+      mood: WeatherMoods.CLEAR,
+      localeKey: "clearSky",
+    },
+    1: {
+      mood: WeatherMoods.PARTIAL_CLOUD,
+      localeKey: "mainlyClear",
+    },
+    2: {
+      mood: WeatherMoods.PARTIAL_CLOUD,
+      localeKey: "partlyCloudy",
+    },
+    3: {
+      mood: WeatherMoods.CLOUD,
+      localeKey: "overcast",
+    },
+    45: {
+      mood: WeatherMoods.FOG,
+      localeKey: "fog",
+    },
+    48: {
+      mood: WeatherMoods.FOG,
+      localeKey: "fog",
+    },
+    51: {
+      mood: WeatherMoods.DRIZZLE,
+      localeKey: "lightDrizzle",
+    },
+    53: {
+      mood: WeatherMoods.DRIZZLE,
+      localeKey: "moderateDrizzle",
+    },
+    55: {
+      mood: WeatherMoods.DRIZZLE,
+      localeKey: "denseDrizzle",
+    },
+    56: {
+      mood: WeatherMoods.DRIZZLE,
+      localeKey: "lightFreezingDrizzle",
+    },
+    57: {
+      mood: WeatherMoods.DRIZZLE,
+      localeKey: "denseFreezingDrizzle",
+    },
 
-  61: {
-    mood: WeatherMoods.RAIN,
-    description: "Slight Rain",
-  },
-  63: {
-    mood: WeatherMoods.RAIN,
-    description: "Moderate Rain",
-  },
-  65: {
-    mood: WeatherMoods.RAIN,
-    description: "Dense Freezing Drizzle",
-  },
-  66: {
-    mood: WeatherMoods.RAIN,
-    description: "Light Freezing Rain",
-  },
-  67: {
-    mood: WeatherMoods.RAIN,
-    description: "Dense Freezing Rain",
-  },
-  71: {
-    mood: WeatherMoods.LIGHT_SNOW,
-    description: "Slight Snow Fall",
-  },
-  73: {
-    mood: WeatherMoods.LIGHT_SNOW,
-    description: "Moderate Snow Fall",
-  },
-  75: {
-    mood: WeatherMoods.SNOW,
-    description: "Heavy Snow Fall",
-  },
-  77: {
-    mood: WeatherMoods.SNOW,
-    description: "Snow grains",
-  },
-  80: {
-    mood: WeatherMoods.DRIZZLE,
-    description: "Slight Rain Shower",
-  },
-  81: {
-    mood: WeatherMoods.DRIZZLE,
-    description: "Moderate Rain Shower",
-  },
-  82: {
-    mood: WeatherMoods.RAIN,
-    description: "Heavy Rain Shower",
-  },
-  85: {
-    mood: WeatherMoods.SNOW,
-    description: "Slight Snow Shower",
-  },
-  86: {
-    mood: WeatherMoods.SNOW,
-    description: "Heavy Snow Shower",
-  },
-  95: {
-    mood: WeatherMoods.THUNDER,
-    description: "Thunderstorm",
-  },
-  96: {
-    mood: WeatherMoods.SNOW,
-    description: "Slight Hail",
-  },
-  99: {
-    mood: WeatherMoods.SNOW,
-    description: "Heavy Hail",
-  },
-};
+    61: {
+      mood: WeatherMoods.RAIN,
+      localeKey: "slightRain",
+    },
+    63: {
+      mood: WeatherMoods.RAIN,
+      localeKey: "moderateRain",
+    },
+    65: {
+      mood: WeatherMoods.RAIN,
+      localeKey: "heavyRain",
+    },
+    66: {
+      mood: WeatherMoods.RAIN,
+      localeKey: "lightFreezingRain",
+    },
+    67: {
+      mood: WeatherMoods.RAIN,
+      localeKey: "denseFreezingRain",
+    },
+    71: {
+      mood: WeatherMoods.LIGHT_SNOW,
+      localeKey: "slightSnowfall",
+    },
+    73: {
+      mood: WeatherMoods.LIGHT_SNOW,
+      localeKey: "moderateSnowfall",
+    },
+    75: {
+      mood: WeatherMoods.SNOW,
+      localeKey: "heavySnowfall",
+    },
+    77: {
+      mood: WeatherMoods.SNOW,
+      localeKey: "snowGrains",
+    },
+    80: {
+      mood: WeatherMoods.DRIZZLE,
+      localeKey: "slightRainShower",
+    },
+    81: {
+      mood: WeatherMoods.DRIZZLE,
+      localeKey: "moderateRainShower",
+    },
+    82: {
+      mood: WeatherMoods.RAIN,
+      localeKey: "heavyRainShower",
+    },
+    85: {
+      mood: WeatherMoods.SNOW,
+      localeKey: "slightSnowShower",
+    },
+    86: {
+      mood: WeatherMoods.SNOW,
+      localeKey: "heavySnowShower",
+    },
+    95: {
+      mood: WeatherMoods.THUNDER,
+      localeKey: "thunderstorm",
+    },
+    96: {
+      mood: WeatherMoods.SNOW,
+      localeKey: "slightHail",
+    },
+    99: {
+      mood: WeatherMoods.SNOW,
+      localeKey: "heavyHail",
+    },
+  };
 
 export { weatherCodes, weatherIcons, getWeatherIcon, WeatherMoods };

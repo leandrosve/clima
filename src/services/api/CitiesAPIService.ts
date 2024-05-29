@@ -33,13 +33,14 @@ export default class CitiesAPIService extends APIService {
   protected static BASE_URL: string = "https://nominatim.openstreetmap.org";
 
   public static async searchCity(
-    term: string
+    term: string,
+    language: string = 'en',
   ): Promise<APIResponse<CityDetails[]>> {
     // Reemplaza los espacios en blanco con +
     const sanitizedText = term.trim().replace(/\s+/g, "+");
     const res = await this.get<SearchCityResponse>(
       `/search`,
-      `city=${sanitizedText}&format=geojson&addressdetails=1&accept-language=es`
+      `city=${sanitizedText}&format=geojson&addressdetails=1&accept-language=${language}`
     );
 
     if (res.hasError) return { ...res, data: [] };

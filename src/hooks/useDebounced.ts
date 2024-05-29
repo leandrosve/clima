@@ -6,7 +6,6 @@ const useDebounced = <T>(value: T, func: (v: T) => void, delay: number) => {
   useEffect(() => {
     const handler = setTimeout(() => {
       if (value === debouncedValue) {
-        console.log(value, debouncedValue);
         func(value);
       }
     }, delay);

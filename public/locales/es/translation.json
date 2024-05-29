@@ -1,0 +1,45 @@
+{
+  "title": "¿Cómo está el clima?",
+  "cityLookup": {
+    "placeholder": "Busca cualquier ciudad que te venga a la mente!",
+    "noResults": "No se encontraron resultados para la búsqueda",
+    "defaultError": "Ups! Se produjo un error inesperado al tratar de obtener la información."
+  },
+  "weather": {
+    "refresh": "Actualizar datos",
+    "measures": {
+      "humidity": "Humedad",
+      "precipitation": "Precipitacion"
+    },
+    "descriptions": {
+      "clearSky": "Cielo despejado",
+      "mainlyClear": "Principalmente despejado",
+      "partlyCloudy": "Parcialmente nublado",
+      "overcast": "Nublado",
+      "fog": "Niebla",
+      "lightDrizzle": "Llovizna ligera",
+      "moderateDrizzle": "Llovizna moderada",
+      "denseDrizzle": "Llovizna densa",
+      "lightFreezingDrizzle": "Llovizna ligera helada",
+      "denseFreezingDrizzle": "Llovizna densa helada",
+      "slightRain": "Lluvia ligera",
+      "moderateRain": "Lluvia moderada",
+      "heavyRain": "Lluvia fuerte",
+      "lightFreezingRain": "Lluvia ligera helada",
+      "denseFreezingRain": "Lluvia densa helada",
+      "slightSnowfall": "Nevada ligera",
+      "moderateSnowfall": "Nevada moderada",
+      "heavySnowfall": "Nevada fuerte",
+      "snowGrains": "Granos de nieve",
+      "slightRainShower": "Chubasco ligero",
+      "moderateRainShower": "Chubasco moderado",
+      "heavyRainShower": "Chubasco fuerte",
+      "slightSnowShower": "Chubasco de nieve ligero",
+      "heavySnowShower": "Chubasco de nieve fuerte",
+      "thunderstorm": "Tormenta eléctrica",
+      "slightHail": "Granizo ligero",
+      "heavyHail": "Granizo fuerte",
+      "unknown": "Desconocido"
+    }
+  }
+}

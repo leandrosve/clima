@@ -1,0 +1,45 @@
+{
+  "title": "How's the weather?",
+  "cityLookup": {
+    "placeholder": "Search for any city that comes to mind!",
+    "noResults": "No results found for the search",
+    "defaultError": "Oops! An unexpected error occurred while trying to fetch the information."
+  },
+  "weather": {
+    "refresh": "Refresh",
+    "measures": {
+      "humidity": "Humidity",
+      "precipitation": "Precipitation"
+    },
+    "descriptions": {
+      "clearSky": "Clear Sky",
+      "mainlyClear": "Mainly clear",
+      "partlyCloudy": "Partly Cloudy",
+      "overcast": "Overcast",
+      "fog": "Foggy",
+      "lightDrizzle": "Light Drizzle",
+      "moderateDrizzle": "Moderate Drizzle",
+      "denseDrizzle": "Dense Drizzle",
+      "lightFreezingDrizzle": "Light Freezing Drizzle",
+      "denseFreezingDrizzle": "Dense Freezing Drizzle",
+      "slightRain": "Slight Rain",
+      "moderateRain": "Hoderate Rain",
+      "heavyRain": "Heavy Rain",
+      "lightFreezingRain": "Light Freezing Rain",
+      "denseFreezingRain": "Dense Freezing Rain",
+      "slightSnowfall": "Slight Snowfall",
+      "moderateSnowfall": "Moderate Snowfall",
+      "heavySnowfall": "Heavy Snowfall",
+      "snowGrains": "Snow Grains",
+      "slightRainShower": "Slight Rain Shower",
+      "moderateRainShower": "Moderate Rain Shower",
+      "heavyRainShower": "Heavy Rain Shower",
+      "slightSnowShower": "Slight Snow Shower",
+      "heavySnowShower": "Heavy Snow Shower",
+      "thunderstorm": "Thunderstorm",
+      "slightHail": "Slight Hail",
+      "heavyHail": "Heavy Hail",
+      "unknown": "Unknown"
+    }
+  }
+}

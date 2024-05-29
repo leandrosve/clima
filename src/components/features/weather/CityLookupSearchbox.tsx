@@ -1,5 +1,4 @@
-"use client";
-import React, { ChangeEvent, FocusEvent, useRef, useState } from "react";
+import { ChangeEvent, FocusEvent, useRef, useState } from "react";
 import Input from "../../common/Input";
 import Button from "../../common/Button";
 import CloseIcon from "../../../icons/CloseIcon";
@@ -7,6 +6,7 @@ import { CityDetails } from "../../../model/CityDetails";
 import useCityLookup from "../../../hooks/useCityLookup";
 import SearchIcon from "../../../icons/SearchIcon";
 import Spinner from "../../common/Spinner";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   onSelectItem: (city: CityDetails) => void;
@@ -17,8 +17,8 @@ const CityLookupSearchbox = ({ onSelectItem }: Props) => {
   const [inputValue, setInputValue] = useState("");
   const [selectedCity, setSelectedCity] = useState<CityDetails | null>(null);
   const ref = useRef<HTMLDivElement>(null);
-
-  const { results, loading, error, debouncedTerm } = useCityLookup(inputValue);
+  const { t } = useTranslation();
+  const { results, loading, error } = useCityLookup(inputValue);
 
   const handleBlur = (e: FocusEvent<HTMLDivElement>) => {
     if (!ref.current) return;
@@ -42,7 +42,7 @@ const CityLookupSearchbox = ({ onSelectItem }: Props) => {
   };
 
   return (
-    <div ref={ref} className="relative" onBlur={handleBlur}>
+    <div ref={ref} className="relative w-full" onBlur={handleBlur}>
       <div onFocus={() => setHasFocus(true)}>
         <Input
           value={
@@ -54,7 +54,7 @@ const CityLookupSearchbox = ({ onSelectItem }: Props) => {
           }}
           onChange={handleChange}
           icon={<SearchIcon />}
-          placeholder="Buscar ciudades"
+          placeholder={t("cityLookup.placeholder")}
           rightElement={
             !!inputValue && (
               <Button
@@ -69,7 +69,9 @@ const CityLookupSearchbox = ({ onSelectItem }: Props) => {
       </div>
       {hasFocus && (!!results.length || loading || !!error) && (
         <div className="absolute bg-base-200 rounded-lg border border-content-400/10 absolute z-10 w-full max-h-52 overflow-y-auto mt-1">
-          {error && <span className="flex p-5">{error}</span>}
+          {error && (
+            <span className="flex p-5">{t("cityLookup." + error)}</span>
+          )}
           {loading ? (
             <div className="flex justify-center p-5">
               <Spinner />

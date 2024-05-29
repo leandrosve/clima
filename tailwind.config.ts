@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '360px',
+      },
       keyframes: {
         fadeIn: {
           "0%": { opacity: "0" },
