@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "class",
+  darkMode: "selector",
   content: [
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/*.{js,ts,jsx,tsx,mdx}",
@@ -56,14 +56,13 @@ const config: Config = {
           300: "hsl(var(--color-content-300) / <alpha-value>)",
           400: "hsl(var(--color-content-400) / <alpha-value>)",
         },
-        input: "hsl(var(--color-input) / <alpha-value>)",
         base: {
           100: "hsl(var(--color-base-100) / <alpha-value>)",
           200: "hsl(var(--color-base-200) / <alpha-value>)",
           300: "hsl(var(--color-base-300) / <alpha-value>)",
         },
         borders: "var(--color-borders)",
-        popper: "hsl(var(--color-popper) / <alpha-value>)",
+        outline: "hsl(var(--color-outline)",
         placeholder: "var(--color-placeholder)",
         danger: {
           200: "hsl(var(--color-danger-200) / <alpha-value>)",

@@ -1,4 +1,3 @@
-import { WeatherData } from "../model/WeatherData";
 import APIService, { APIResponse } from "./APIService";
 
 interface SearchCityResponse {
@@ -6,12 +5,16 @@ interface SearchCityResponse {
     properties: {
       name: string;
       display_name: string;
+      importance: number;
+      address: {
+        country: string;
+        country_code: string;
+      };
     };
-    address: {
-      country: string;
-      country_code: string;
+
+    geometry: {
+      coordinates: [number, number];
     };
-    importance: number;
   }[];
 }
 
@@ -21,12 +24,13 @@ interface CityDetails {
   country: string;
   countryCode: string;
   importance: number;
+  latitude: number;
+  longitude: number;
 }
 
 // Documentacion: https://nominatim.org/release-docs/latest/api/Search/
 export default class CitiesAPIService extends APIService {
-  protected static BASE_URL: string =
-    "https://nominatim.openstreetmap.org/search?city=Buenos&format=geojson";
+  protected static BASE_URL: string = "https://nominatim.openstreetmap.org";
 
   public static async searchCity(
     term: string
@@ -43,9 +47,11 @@ export default class CitiesAPIService extends APIService {
     const parsedData = res.data.features.map((feature) => ({
       name: feature.properties.name,
       displayName: feature.properties.display_name,
-      country: feature.address.country,
-      countryCode: feature.address.country_code,
-      importance: feature.importance,
+      country: feature.properties.address.country,
+      countryCode: feature.properties.address.country_code,
+      importance: feature.properties.importance,
+      longitude: feature.geometry.coordinates[0],
+      latitude: feature.geometry.coordinates[1],
     }));
 
     return { ...res, data: parsedData };

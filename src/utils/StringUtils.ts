@@ -1,3 +1,5 @@
+import { twMerge } from "tailwind-merge";
+
 const printIf = (
   value: string | null | undefined,
   condition: unknown,
@@ -12,7 +14,7 @@ const includesIgnoreCase = (text: string, term: string) => {
 };
 
 const joinClassNames = (...classNames: (string | null | undefined)[]) => {
-  return classNames.filter((c) => !!c).join(" ");
+  return twMerge(classNames.filter((c) => !!c).join(" "));
 };
 
 export { printIf, includesIgnoreCase, joinClassNames };

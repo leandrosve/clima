@@ -2,13 +2,19 @@ import { useEffect, useState } from "react";
 import { WeatherData } from "../model/WeatherData";
 import WeatherAPIService from "../services/WeatherAPIService";
 import Logger from "../utils/Logger";
+import { CityDetails } from "../model/CityDetails";
 
-const useWeatherData = (city: City) => {
+const useWeatherData = (city: CityDetails | null) => {
   const [data, setData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchData = async (city: City) => {
+  const fetchData = async (city: CityDetails | null) => {
+    if (!city) {
+      setLoading(false);
+      setData(null);
+      return;
+    }
     setLoading(true);
     const res = await WeatherAPIService.getWeatherData(
       city.latitude,

@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes, forwardRef } from "react";
-import { joinClassNames } from "../../../utils/StringUtils";
+import { joinClassNames } from "../../utils/StringUtils";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: React.ReactNode;
@@ -16,7 +16,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       <>
         <div
           className={joinClassNames(
-            "relative rounded bg-base-200 shadow flex items-center border border-transparent",
+            "relative rounded bg-base-200 shadow flex items-center border border-transparent h-10  focus-within:outline-1",
             className
           )}
         >
@@ -38,7 +38,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           />
 
           {!!rightElement && (
-            <div className="inset-y-0 right-0 flex items-center  pr-0">
+            <div className="inset-y-0 right-0 flex items-center  pr-0 h-full">
               {rightElement}
             </div>
           )}
