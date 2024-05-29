@@ -1,4 +1,4 @@
-import Logger from "../utils/Logger";
+import Logger from "../../utils/Logger";
 
 type APISuccessfulResponse<T> = {
   status: number;

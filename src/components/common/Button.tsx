@@ -5,7 +5,7 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 const CLASSNAME =
-  "bg-base-200 inline-flex items-center text-content-100 gap-2 shadow-sm hover:bg-content-400/5 p-3 rounded-md focus:outline-1 focus:outline-outline min-w-fit";
+  "bg-base-200 inline-flex items-center text-content-100 gap-2  hover:duration-200 shadow-sm hover:bg-content-400/5 p-3 rounded-md focus:outline-1 focus:outline-outline min-w-fit";
 
 const Button = ({ children, className, ...props }: ButtonProps) => {
   return (

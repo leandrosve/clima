@@ -39,7 +39,7 @@ export default class CitiesAPIService extends APIService {
     const sanitizedText = term.trim().replace(/\s+/g, "+");
     const res = await this.get<SearchCityResponse>(
       `/search`,
-      `city=${sanitizedText}&format=geojson&addressdetails=1`
+      `city=${sanitizedText}&format=geojson&addressdetails=1&accept-language=es`
     );
 
     if (res.hasError) return { ...res, data: [] };

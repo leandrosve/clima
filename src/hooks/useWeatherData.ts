@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { WeatherData } from "../model/WeatherData";
-import WeatherAPIService from "../services/WeatherAPIService";
+import WeatherAPIService from "../services/api/WeatherAPIService";
 import Logger from "../utils/Logger";
 import { CityDetails } from "../model/CityDetails";
 

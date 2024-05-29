@@ -69,11 +69,7 @@ const CityLookupSearchbox = ({ onSelectItem }: Props) => {
       </div>
       {hasFocus && (!!results.length || loading || !!error) && (
         <div className="absolute bg-base-200 rounded-lg border border-content-400/10 absolute z-10 w-full max-h-52 overflow-y-auto mt-1">
-          {debouncedTerm && !results.length && !loading && (
-            <span className="p-5">No se han encontrado resultados</span>
-          )}
-          {error && <span className="p-5">{error}</span>}
-
+          {error && <span className="flex p-5">{error}</span>}
           {loading ? (
             <div className="flex justify-center p-5">
               <Spinner />
@@ -96,7 +92,9 @@ const CityLookupSearchbox = ({ onSelectItem }: Props) => {
                       alt={city.country}
                       className="size-6 rounded-full "
                     />
-                    <span className="line-clamp-1" title={city.displayName}>{city.displayName}</span>
+                    <span className="line-clamp-1" title={city.displayName}>
+                      {city.displayName}
+                    </span>
                   </div>
                 </li>
               ))}

@@ -29,8 +29,7 @@ const config: Config = {
         },
       },
       animation: {
-        fadeIn: "fadeIn 1.75s ease-in-out forwards",
-        fadeInFast: "fadeIn .2s ease-in-out forwards",
+        fadeIn: "fadeIn .5s ease-in-out forwards",
         "spin-slow": "spin 10s linear infinite",
         unfold: "test .4s ease-in-out forwards",
         slideLeft: "slideLeft .3s ease-in-out forwards",

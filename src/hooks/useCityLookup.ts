@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CityDetails } from "../model/CityDetails";
-import CitiesAPIService from "../services/CitiesAPIService";
+import CitiesAPIService from "../services/api/CitiesAPIService";
 import Logger from "../utils/Logger";
 import useDebounced from "./useDebounced";
 
@@ -11,9 +11,9 @@ const useCityLookup = (searchTerm: string) => {
   const [error, setError] = useState<string | null>(null);
 
   const search = async (term: string) => {
+    console.log("search", term)
     setDebouncedTerm(term);
     const sanitizedTerm = term.trim();
-
     if (!sanitizedTerm) {
       setResults([]);
       setError(null);
@@ -31,6 +31,11 @@ const useCityLookup = (searchTerm: string) => {
       );
       return;
     }
+    if (!res.data.length) {
+      console.log("NO RESULTS")
+      setError("No se han encontrado resultados para su búsqueda");
+    }
+    console.log(res.data)
     const orderedResults = res.data.sort((a, b) => b.importance - a.importance);
     setResults(orderedResults);
   };
