@@ -1,0 +1,66 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    --color-base-100: 242deg 0% 95%;
+    --color-base-200: 231deg 0% 98%;
+    --color-base-300: 234deg 0% 95%;
+    --color-base-400: 235deg 0% 82%;
+
+    --color-primary-50: 227deg 100% 96%;
+    --color-primary-100: 231deg 100% 94%;
+    --color-primary-200: 231deg 100% 89%;
+    --color-primary-300: 233deg 100% 82%;
+    --color-primary-400: 238deg 97% 74%;
+    --color-primary-500: 242deg 91% 67%;
+    --color-primary-600: 247deg 82% 56%;
+    --color-primary-700: 248deg 63% 51%;
+    --color-primary-800: 247deg 59% 41%;
+    --color-primary-900: 246deg 52% 34%;
+    --color-primary-950: 247deg 51% 20%;
+
+    --color-content-100: 0deg 0% 5%;
+    --color-content-200: 0deg 0% 20%;
+    --color-content-300: 0deg 0% 30%;
+    --color-content-400: 0deg 0% 50%;
+
+    --gradient: linear-gradient(to top left,#00CFFF,#FF095E);
+  }
+
+  :root.dark {
+    --color-base-100: 243deg 36% 10%;
+    --color-base-200: 243deg 36% 18%;
+    --color-base-300: 243deg 36% 25%;
+    --color-content-100: 0deg 0% 100%;
+    --color-content-200: 0deg 0% 90%;
+    --color-content-300: 0deg 0% 85%;
+    --color-content-400: 0deg 0% 70%;
+
+  }
+}
+
+:root {
+  font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: auto;
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+:focus-visible,
+.focus-visible\:outline-none:focus-visible {
+  outline: 2px solid #7fc0e857;
+  outline-offset: 2px;
+}

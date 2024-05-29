@@ -1,0 +1,10 @@
+.weather-card {
+  background: var(--base-200);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.weather-card__flag {
+  height: 50px;
+  width: 50px;
+}
