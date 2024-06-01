@@ -1,18 +1,15 @@
 import i18n from "i18next";
-import { initReactI18next, } from "react-i18next";
-import Backend from 'i18next-http-backend';
+import { initReactI18next } from "react-i18next";
+import Backend from "i18next-http-backend";
+import ConfigService from "./services/local/ConfigService";
 
 i18n
-  .use(Backend)
-  // pass the i18n instance to react-i18next.
+  .use(Backend) // Para que cargue las traducciones dinamicamente de la carpeta public
   .use(initReactI18next)
-  // init i18next
   .init({
     fallbackLng: "en",
-    debug: true,
-    interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
-    },
+    lng: ConfigService.localConfig.lang || "es",
+    debug: false,
   });
 
 export default i18n;

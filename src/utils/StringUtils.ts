@@ -1,5 +1,6 @@
 import { twMerge } from "tailwind-merge";
 
+// Metodos utilitarios para texto y manejo de clases
 const printIf = (
   value: string | null | undefined,
   condition: unknown,
@@ -14,6 +15,8 @@ const includesIgnoreCase = (text: string, term: string) => {
 };
 
 const joinClassNames = (...classNames: (string | null | undefined)[]) => {
+  // twMerge lo utilizo para resolver conflictos cuando aparece mas de una vez la misma regla de tailwind
+  // La ultima vez que aparece sera la que se tenga en cuenta
   return twMerge(classNames.filter((c) => !!c).join(" "));
 };
 

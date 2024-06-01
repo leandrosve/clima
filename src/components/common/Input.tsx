@@ -16,7 +16,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       <>
         <div
           className={joinClassNames(
-            "relative rounded bg-base-200 shadow flex items-center border border-transparent h-10  focus-within:outline-1",
+            "relative rounded bg-base-200 shadow-lg flex items-center border border-transparent h-10  focus-within:outline-1",
             className
           )}
         >

@@ -1,3 +1,4 @@
+// Posibles "estados de animos" del clima, se usara para determinar la imagen
 enum WeatherMoods {
   CLEAR = "CLEAR",
   PARTIAL_CLOUD = "PARTIAL_CLOUD",
@@ -12,6 +13,7 @@ enum WeatherMoods {
   FOG = "FOG",
 }
 
+// Algunos iconos a mostrar varian entre dia y noche
 const weatherIcons = {
   day: {
     [WeatherMoods.CLEAR]: "day_clear.svg",
@@ -41,12 +43,14 @@ const weatherIcons = {
   },
 };
 
+// Devuelve el icono correspondiente en base al animo del clima y si es dia o noche
 const getWeatherIcon = (mood: WeatherMoods, isDay?: boolean) => {
   const basePath = "/src/assets/images/weather/";
   if (isDay) return basePath + weatherIcons.day[mood];
   return basePath + weatherIcons.night[mood];
 };
 
+// Todos los codigos de tiempo que puede llegar a devolver la API
 // En base a los WMO Weather interpretation codes (WW)
 // https://open-meteo.com/en/docs
 const weatherCodes: Record<number, { mood: WeatherMoods; localeKey: string }> =

@@ -1,0 +1,47 @@
+{
+  "title": "Quel temps fait-il?",
+  "cityLookup": {
+    "placeholder": "Recherchez n'importe quelle ville qui vous vient à l'esprit!",
+    "noResults": "Aucun résultat trouvé pour la recherche",
+    "defaultError": "Oups! Une erreur inattendue s'est produite lors de la tentative de récupération des informations."
+  },
+  "weather": {
+    "refresh": "Actualiser les données",
+    "showMap": "Voir la carte",
+    "measures": {
+      "humidity": "Humidité",
+      "precipitation": "Précipitation"
+    },
+    "defaultApiError": "Oups! Une erreur inattendue s'est produite lors de la tentative de récupération des informations.",
+    "descriptions": {
+      "clearSky": "Ciel dégagé",
+      "mainlyClear": "Principalement dégagé",
+      "partlyCloudy": "Partiellement nuageux",
+      "overcast": "Couvert",
+      "fog": "Brouillard",
+      "lightDrizzle": "Bruine légère",
+      "moderateDrizzle": "Bruine modérée",
+      "denseDrizzle": "Bruine dense",
+      "lightFreezingDrizzle": "Bruine légère verglaçante",
+      "denseFreezingDrizzle": "Bruine dense verglaçante",
+      "slightRain": "Pluie légère",
+      "moderateRain": "Pluie modérée",
+      "heavyRain": "Pluie forte",
+      "lightFreezingRain": "Pluie légère verglaçante",
+      "denseFreezingRain": "Pluie dense verglaçante",
+      "slightSnowfall": "Légère chute de neige",
+      "moderateSnowfall": "Chute de neige modérée",
+      "heavySnowfall": "Forte chute de neige",
+      "snowGrains": "Grains de neige",
+      "slightRainShower": "Averse légère",
+      "moderateRainShower": "Averse modérée",
+      "heavyRainShower": "Forte averse",
+      "slightSnowShower": "Averse de neige légère",
+      "heavySnowShower": "Forte averse de neige",
+      "thunderstorm": "Orage",
+      "slightHail": "Grêle légère",
+      "heavyHail": "Grêle forte",
+      "unknown": "Inconnu"
+    }
+  }
+}

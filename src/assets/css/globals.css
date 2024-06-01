@@ -4,28 +4,18 @@
 
 @layer base {
   :root {
-    --color-base-100: 242deg 0% 95%;
-    --color-base-200: 231deg 0% 98%;
-    --color-base-300: 234deg 0% 95%;
-
-    --color-outline: 227deg 100% 96%;
-
-    --color-primary-50: 227deg 100% 96%;
-    --color-primary-100: 231deg 100% 94%;
-    --color-primary-200: 231deg 100% 89%;
-    --color-primary-300: 233deg 100% 82%;
-    --color-primary-400: 238deg 97% 74%;
-    --color-primary-500: 242deg 91% 67%;
-    --color-primary-600: 247deg 82% 56%;
-    --color-primary-700: 248deg 63% 51%;
-    --color-primary-800: 247deg 59% 41%;
-    --color-primary-900: 246deg 52% 34%;
-    --color-primary-950: 247deg 51% 20%;
+   
+    --color-base-100: 242deg 0% 100%;
+    --color-base-200: 231deg 0% 96%;
+    --color-base-300: 234deg 0% 93%;
 
     --color-content-100: 0deg 0% 5%;
     --color-content-200: 0deg 0% 20%;
-    --color-content-300: 0deg 0% 30%;
+    --color-content-300: 0deg 0% 25%;
     --color-content-400: 0deg 0% 50%;
+
+    --color-outline: 227deg 100% 96%;
+    --color-borders: 0deg, 0%, 5%, .1;
   }
 
   :root[data-mode="dark"] {
@@ -38,18 +28,7 @@
     --color-content-300: 0deg 0% 85%;
     --color-content-400: 0deg 0% 80%;
 
-    --color-primary-50: 227deg 100% 96%;
-    --color-primary-100: 231deg 100% 94%;
-    --color-primary-200: 231deg 100% 89%;
-    --color-primary-300: 233deg 100% 82%;
-    --color-primary-400: 238deg 97% 74%;
-    --color-primary-450: 238deg 97% 70%;
-    --color-primary-500: 242deg 91% 67%;
-    --color-primary-600: 247deg 82% 56%;
-    --color-primary-700: 248deg 63% 51%;
-    --color-primary-800: 247deg 59% 41%;
-    --color-primary-900: 246deg 52% 34%;
-    --color-primary-950: 247deg 51% 20%;
+    --color-borders: 0deg, 0%, 40%, .2;
   }
 }
 
@@ -64,16 +43,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: auto;
   overflow-x: hidden;
+  background: hsl(var(--color-base-100));
+}
+
+.card-gradient {
+  background: radial-gradient(at top right, #eaedf0, #fafcff, #fff);
 }
 
 :root[data-mode="dark"] .card-gradient {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    18deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0) 20%,
-    rgba(71, 118, 230, 0.1) 100%
-  );
+  background: radial-gradient(at top right, #18213c, #111620, #141414);
 }
 
 ul {
@@ -87,6 +65,5 @@ ul {
 
 :focus-visible,
 .focus-visible\:outline-none:focus-visible {
-  outline: 2px solid #7fc0e857;
-  outline-offset: 2px;
+  outline: 3px solid #009dffc0;
 }

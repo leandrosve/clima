@@ -7,10 +7,12 @@
   },
   "weather": {
     "refresh": "Actualizar datos",
+    "showMap": "Ver mapa",
     "measures": {
       "humidity": "Humedad",
       "precipitation": "Precipitacion"
     },
+    "defaultApiError": "Ups! Se produjo un error inesperado al tratar de obtener la información.",
     "descriptions": {
       "clearSky": "Cielo despejado",
       "mainlyClear": "Principalmente despejado",

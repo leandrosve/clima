@@ -1,10 +1,13 @@
 interface LocalConfig {
   theme: "light" | "dark";
+  lang: string;
 }
 
+// Utilizo esta clase para manejar lo referente a la configuracion local del sitio
 export default class ConfigService {
   static DEFAULT_CONFIG: LocalConfig = {
     theme: "dark",
+    lang: "es",
   };
 
   static localConfig: LocalConfig = this.getLocalConfig();
@@ -13,6 +16,7 @@ export default class ConfigService {
     const config = this.getLocalConfig();
     if (config.theme == "dark") {
       document.documentElement.setAttribute("data-mode", "dark");
+      document.documentElement.classList.add("dark");
     }
     return config;
   }
@@ -35,8 +39,19 @@ export default class ConfigService {
   static switchTheme() {
     const theme = this.localConfig.theme == "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-mode", theme);
+    if (theme == "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
     this.localConfig.theme = theme;
     this.saveLocalConfig(this.localConfig);
     return this.localConfig.theme;
+  }
+
+  static changeLanguage(lang: string) {
+    this.localConfig.lang = lang;
+    this.saveLocalConfig(this.localConfig);
+    return this.localConfig.lang;
   }
 }

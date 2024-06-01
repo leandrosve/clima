@@ -1,0 +1,47 @@
+{
+  "title": "Como está o tempo?",
+  "cityLookup": {
+    "placeholder": "Procure qualquer cidade que venha à mente!",
+    "noResults": "Nenhum resultado encontrado para a busca",
+    "defaultError": "Ops! Ocorreu um erro inesperado ao tentar obter as informações."
+  },
+  "weather": {
+    "refresh": "Atualizar dados",
+    "showMap": "Ver mapa",
+    "measures": {
+      "humidity": "Umidade",
+      "precipitation": "Precipitação"
+    },
+    "defaultApiError": "Ops! Ocorreu um erro inesperado ao tentar obter as informações.",
+    "descriptions": {
+      "clearSky": "Céu limpo",
+      "mainlyClear": "Principalmente limpo",
+      "partlyCloudy": "Parcialmente nublado",
+      "overcast": "Nublado",
+      "fog": "Nevoeiro",
+      "lightDrizzle": "Garoa leve",
+      "moderateDrizzle": "Garoa moderada",
+      "denseDrizzle": "Garoa densa",
+      "lightFreezingDrizzle": "Garoa leve congelante",
+      "denseFreezingDrizzle": "Garoa densa congelante",
+      "slightRain": "Chuva leve",
+      "moderateRain": "Chuva moderada",
+      "heavyRain": "Chuva forte",
+      "lightFreezingRain": "Chuva leve congelante",
+      "denseFreezingRain": "Chuva densa congelante",
+      "slightSnowfall": "Neve leve",
+      "moderateSnowfall": "Neve moderada",
+      "heavySnowfall": "Neve forte",
+      "snowGrains": "Grãos de neve",
+      "slightRainShower": "Chuva passageira leve",
+      "moderateRainShower": "Chuva passageira moderada",
+      "heavyRainShower": "Chuva passageira forte",
+      "slightSnowShower": "Neve passageira leve",
+      "heavySnowShower": "Neve passageira forte",
+      "thunderstorm": "Trovoada",
+      "slightHail": "Granizo leve",
+      "heavyHail": "Granizo forte",
+      "unknown": "Desconhecido"
+    }
+  }
+}

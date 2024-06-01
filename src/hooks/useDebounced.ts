@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+
+// Hook utilitario para aplicar debounce a cualquier valor
 const useDebounced = <T>(value: T, func: (v: T) => void, delay: number) => {
   const [debouncedValue, setDebouncedValue] = useState<T>(value);
 

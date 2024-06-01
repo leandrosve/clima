@@ -1,3 +1,4 @@
+// Clase utilitaria para facilitar el logging
 export default class Logger {
     private static enabled = true;
   

@@ -1,4 +1,4 @@
-import { WeatherData } from "../model/WeatherData";
+import { WeatherData } from "../../model/WeatherData";
 import APIService, { APIResponse } from "./APIService";
 
 interface WeatherResponse {
@@ -44,7 +44,7 @@ export default class WeatherAPIService extends APIService {
       weatherCode: res.data.current.weather_code,
       isDay: res.data.current.is_day,
     };
-    
+
     return { ...res, data: sanitizedData };
   }
 }

@@ -16,6 +16,8 @@ const CityLookupSearchbox = ({ onSelectItem }: Props) => {
   const [hasFocus, setHasFocus] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [selectedCity, setSelectedCity] = useState<CityDetails | null>(null);
+
+  // Utilizo la referencia para luego determinar si debo cerrar o no el dropdown ante un click 
   const ref = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
   const { results, loading, error } = useCityLookup(inputValue);
@@ -43,8 +45,12 @@ const CityLookupSearchbox = ({ onSelectItem }: Props) => {
 
   return (
     <div ref={ref} className="relative w-full" onBlur={handleBlur}>
-      <div onFocus={() => setHasFocus(true)}>
+      <label className="text-xl" htmlFor="city-lookup">
+        {t("title")}
+      </label>
+      <div className="mt-4" onFocus={() => setHasFocus(true)}>
         <Input
+          id="city-lookup"
           value={
             !hasFocus && selectedCity ? selectedCity.displayName : inputValue
           }
@@ -52,6 +58,7 @@ const CityLookupSearchbox = ({ onSelectItem }: Props) => {
           onKeyDown={(e) => {
             if ("Enter" === e.key) setHasFocus(false);
           }}
+          className="border-borders border dark:border-none"
           onChange={handleChange}
           icon={<SearchIcon />}
           placeholder={t("cityLookup.placeholder")}
@@ -60,6 +67,7 @@ const CityLookupSearchbox = ({ onSelectItem }: Props) => {
               <Button
                 className="h-full px-3 border-none shadow-none bg-transparent"
                 onClick={() => handleReset()}
+                aria-label="clear input"
               >
                 <CloseIcon />
               </Button>
@@ -68,7 +76,7 @@ const CityLookupSearchbox = ({ onSelectItem }: Props) => {
         ></Input>
       </div>
       {hasFocus && (!!results.length || loading || !!error) && (
-        <div className="absolute bg-base-200 rounded-lg border border-content-400/10 absolute z-10 w-full max-h-52 overflow-y-auto mt-1">
+        <div className="animate-popup absolute bg-base-200 rounded-lg border border-borders absolute z-10 w-full max-h-52 overflow-y-auto mt-1">
           {error && (
             <span className="flex p-5">{t("cityLookup." + error)}</span>
           )}
@@ -83,7 +91,7 @@ const CityLookupSearchbox = ({ onSelectItem }: Props) => {
                   key={index}
                   onClick={() => onSelect(city)}
                   tabIndex={0}
-                  className="px-4 py-3 flex items-center cursor-pointer hover:bg-content-400/5 transition-[background] duration-100  [&:not(:last-child)]:border-b border-content-400/5"
+                  className="px-4 py-3 flex items-center cursor-pointer hover:bg-content-400/5 transition-[background] duration-100  [&:not(:last-child)]:border-b border-borders"
                   onKeyDown={(e) => {
                     if ("Enter" === e.key) onSelect(city);
                   }}

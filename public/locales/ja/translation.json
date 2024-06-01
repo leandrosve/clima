@@ -1,0 +1,47 @@
+{
+  "title": "天気はどうですか？",
+  "cityLookup": {
+    "placeholder": "思いつくままにどんな都市でも検索してください！",
+    "noResults": "検索結果が見つかりませんでした",
+    "defaultError": "おっと！情報の取得中に予期しないエラーが発生しました。"
+  },
+  "weather": {
+    "refresh": "データを更新",
+    "showMap": "地図を見る",
+    "measures": {
+      "humidity": "湿度",
+      "precipitation": "降水量"
+    },
+    "defaultApiError": "おっと！情報の取得中に予期しないエラーが発生しました。",
+    "descriptions": {
+      "clearSky": "晴天",
+      "mainlyClear": "ほぼ晴れ",
+      "partlyCloudy": "一部曇り",
+      "overcast": "曇り",
+      "fog": "霧",
+      "lightDrizzle": "小雨",
+      "moderateDrizzle": "適度な小雨",
+      "denseDrizzle": "濃い小雨",
+      "lightFreezingDrizzle": "軽い凍雨",
+      "denseFreezingDrizzle": "濃い凍雨",
+      "slightRain": "小雨",
+      "moderateRain": "適度な雨",
+      "heavyRain": "大雨",
+      "lightFreezingRain": "軽い凍る雨",
+      "denseFreezingRain": "濃い凍る雨",
+      "slightSnowfall": "軽い降雪",
+      "moderateSnowfall": "適度な降雪",
+      "heavySnowfall": "大雪",
+      "snowGrains": "雪粒",
+      "slightRainShower": "軽いにわか雨",
+      "moderateRainShower": "適度なにわか雨",
+      "heavyRainShower": "激しいにわか雨",
+      "slightSnowShower": "軽いにわか雪",
+      "heavySnowShower": "激しいにわか雪",
+      "thunderstorm": "雷雨",
+      "slightHail": "軽い雹",
+      "heavyHail": "激しい雹",
+      "unknown": "不明"
+    }
+  }
+}

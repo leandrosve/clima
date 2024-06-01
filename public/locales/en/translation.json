@@ -5,8 +5,10 @@
     "noResults": "No results found for the search",
     "defaultError": "Oops! An unexpected error occurred while trying to fetch the information."
   },
+  "defaultApiError": "Oops! An unexpected error occurred while trying to fetch the information.",
   "weather": {
     "refresh": "Refresh",
+    "showMap": "Show in map",
     "measures": {
       "humidity": "Humidity",
       "precipitation": "Precipitation"

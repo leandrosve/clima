@@ -45,6 +45,7 @@ export default class CitiesAPIService extends APIService {
 
     if (res.hasError) return { ...res, data: [] };
 
+    // La api devuelve muchos datos que no necesito, por lo que me quedo solo con los necesario 
     const parsedData = res.data.features.map((feature) => ({
       name: feature.properties.name,
       displayName: feature.properties.display_name,

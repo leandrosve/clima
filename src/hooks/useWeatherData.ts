@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { WeatherData } from "../model/WeatherData";
 import WeatherAPIService from "../services/api/WeatherAPIService";
-import Logger from "../utils/Logger";
 import { CityDetails } from "../model/CityDetails";
 
+// Este hook contiene la logica para obtener la informacion de clima y hora de la ciudad
 const useWeatherData = (city: CityDetails | null) => {
   const [data, setData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
   const fetchData = async (city: CityDetails | null) => {
+    setError(null);
     if (!city) {
       setLoading(false);
       setData(null);
@@ -22,10 +23,8 @@ const useWeatherData = (city: CityDetails | null) => {
     );
     setLoading(false);
     if (res.hasError) {
-      Logger.danger("Ocurrió un error", res.error);
-      setError(
-        "Ups! Se produjo un error inesperado al tratar de obtener la información."
-      );
+      setError("defaultApiError"); // Codigo de error para aplicar la traduccion
+      setData(null);
       return;
     }
     setData(res.data);
