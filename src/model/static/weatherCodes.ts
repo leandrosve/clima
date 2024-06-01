@@ -45,7 +45,7 @@ const weatherIcons = {
 
 // Devuelve el icono correspondiente en base al animo del clima y si es dia o noche
 const getWeatherIcon = (mood: WeatherMoods, isDay?: boolean) => {
-  const basePath = "/src/assets/images/weather/";
+  const basePath = "/images/weather/";
   if (isDay) return basePath + weatherIcons.day[mood];
   return basePath + weatherIcons.night[mood];
 };

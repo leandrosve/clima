@@ -10,6 +10,7 @@ import MapIcon from "../../../icons/MapIcon";
 import { LinkButton } from "../../common/Button";
 import { useTranslation } from "react-i18next";
 import Card from "../../common/Card";
+import Image from "../../common/Image";
 
 interface Props {
   city: CityDetails;
@@ -48,10 +49,11 @@ const WeatherCard = ({ city, weatherData }: Props) => {
             </div>
           </div>
           <div className="grow-1 min-w-[40px]">
-            <img
+            <Image
               src={getWeatherIcon(weatherCode.mood, weatherData.isDay)}
               alt={t("weather.descriptions." + weatherCode.localeKey)}
-              className="w-[150px] max-xs:m-auto  max-sm:w-[100px] self-end"
+              wrapperClassName="size-[150px]  max-sm:size-[100px] max-xs:m-auto self-end"
+              className="w-full h-full"
             />
           </div>
         </div>
