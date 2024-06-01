@@ -1,3 +1,5 @@
+import { titles } from "../../model/static/languages";
+
 interface LocalConfig {
   theme: "light" | "dark";
   lang: string;
@@ -14,6 +16,8 @@ export default class ConfigService {
 
   static initialize() {
     const config = this.getLocalConfig();
+    const title = titles[config.lang] ?? titles.es;
+    document.title = title;
     if (config.theme == "dark") {
       document.documentElement.setAttribute("data-mode", "dark");
       document.documentElement.classList.add("dark");
@@ -51,6 +55,8 @@ export default class ConfigService {
 
   static changeLanguage(lang: string) {
     this.localConfig.lang = lang;
+    const title = titles[lang] ?? titles.es;
+    document.title = title;
     this.saveLocalConfig(this.localConfig);
     return this.localConfig.lang;
   }
