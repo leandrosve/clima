@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CityLookupSearchbox from "../features/cities/CityLookupSearchbox";
 import { CityDetails } from "../../model/CityDetails";
 import { useTranslation } from "react-i18next";

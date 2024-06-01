@@ -1,4 +1,3 @@
-import React from "react";
 import SpinnerIcon from "../../icons/SpinnerIcon";
 
 const Spinner = () => {

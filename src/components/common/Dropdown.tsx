@@ -1,6 +1,5 @@
 import { FocusEvent, ReactNode, useRef, useState } from "react";
 import Button, { ButtonProps } from "./Button";
-import ChevronIcon from "../../icons/ChevronIcon";
 import CheckIcon from "../../icons/CheckIcon";
 
 interface Props {
