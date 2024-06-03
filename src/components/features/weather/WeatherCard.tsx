@@ -42,8 +42,8 @@ const WeatherCard = ({ city, weatherData }: Props) => {
                   {t("weather.measures.humidity")}: {weatherData.humidity}%{" "}
                 </div>
                 <div className="whitespace-nowrap">
-                  {t("weather.measures.precipitation")}:{" "}
-                  {weatherData.precipitation}%
+                  {t("weather.measures.wind")}:{" "}
+                  {weatherData.windSpeed} km/h
                 </div>
               </div>
             </div>

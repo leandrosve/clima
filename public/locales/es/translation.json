@@ -10,7 +10,7 @@
     "showMap": "Ver mapa",
     "measures": {
       "humidity": "Humedad",
-      "precipitation": "Precipitacion"
+      "wind": "Viento"
     },
     "defaultApiError": "Ups! Se produjo un error inesperado al tratar de obtener la información.",
     "descriptions": {

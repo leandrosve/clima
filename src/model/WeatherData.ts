@@ -4,7 +4,7 @@ export interface WeatherData {
   timezone: string;
   temperature: number;
   humidity: number;
-  precipitation: number;
+  windSpeed: number;
   rain: number;
   weatherCode: number;
   isDay: boolean;

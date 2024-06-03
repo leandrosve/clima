@@ -11,7 +11,7 @@
     "showMap": "Show in map",
     "measures": {
       "humidity": "Humidity",
-      "precipitation": "Precipitation"
+      "wind": "Wind"
     },
     "descriptions": {
       "clearSky": "Clear Sky",

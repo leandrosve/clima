@@ -10,7 +10,7 @@
     "showMap": "地図を見る",
     "measures": {
       "humidity": "湿度",
-      "precipitation": "降水量"
+      "wind": "風"
     },
     "defaultApiError": "おっと！情報の取得中に予期しないエラーが発生しました。",
     "descriptions": {

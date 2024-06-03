@@ -21,19 +21,19 @@ const Header = () => {
         <LinkButton
           href="https://www.linkedin.com/in/leandro-svetlich"
           target="_blank"
-          className="bg-transparent text-content-300"
+          className="bg-transparent shadow-none text-content-300"
         >
-          <LinkedinIcon />
+          <LinkedinIcon  className="size-6"/>
         </LinkButton>
         <LinkButton
           href="https://github.com/leandrosve/clima"
           target="_blank"
-          className="bg-transparent text-content-300"
+          className="bg-transparent shadow-none text-content-300"
         >
-          <GithubIcon />
+          <GithubIcon className="size-6"/>
         </LinkButton>
       </div>
-      <div className="flex gap-0 border-borders border dark:border-none rounded-md">
+      <div className="flex gap-0 border-borders border dark:border-none rounded-md h-fit">
         <Dropdown
           options={languages.map((l) => l.code)}
           value={i18n.language}

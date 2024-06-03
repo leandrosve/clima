@@ -10,7 +10,7 @@ interface WeatherResponse {
     time: string;
     temperature_2m: number;
     relative_humidity_2m: number;
-    precipitation: number;
+    wind_speed_10m: number;
     rain: number;
     weather_code: number;
     is_day: boolean;
@@ -25,7 +25,7 @@ export default class WeatherAPIService extends APIService {
     longitude: number
   ): Promise<APIResponse<WeatherData>> {
     const variables =
-      "current=temperature_2m,relative_humidity_2m,precipitation,rain,weather_code,is_day&forecast_days=1&timezone=auto";
+      "current=temperature_2m,relative_humidity_2m,wind_speed_10m,rain,weather_code,is_day&forecast_days=1&timezone=auto";
     const res = await this.get<WeatherResponse>(
       `/forecast`,
       `latitude=${latitude}&longitude=${longitude}&${variables}`
@@ -39,7 +39,7 @@ export default class WeatherAPIService extends APIService {
       timezone: res.data.timezone,
       temperature: res.data.current.temperature_2m,
       humidity: res.data.current.relative_humidity_2m,
-      precipitation: res.data.current.precipitation,
+      windSpeed: res.data.current.wind_speed_10m,
       rain: res.data.current.rain,
       weatherCode: res.data.current.weather_code,
       isDay: res.data.current.is_day,
